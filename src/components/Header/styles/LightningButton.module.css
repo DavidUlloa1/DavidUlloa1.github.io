@@ -1,0 +1,12 @@
+.container {
+    /* height: calc(var(--header-height) + 4px);
+    width: calc(var(--header-height) + 4px); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 12px;
+}
+
+.hover {
+    cursor: pointer;
+}

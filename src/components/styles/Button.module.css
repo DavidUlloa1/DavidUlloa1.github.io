@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Quicksand&display=swap');
+
+.container {
+    border-radius: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Quicksand' sans-serif;
+}

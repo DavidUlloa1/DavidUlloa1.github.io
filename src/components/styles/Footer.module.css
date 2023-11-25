@@ -1,0 +1,9 @@
+.container {
+    width: 100%;
+    height: var(--footer-height);
+    text-align: center;
+    justify-self: flex-end;
+    font-size: 13px;
+    line-height: 100%;
+    margin-top: auto;
+}
