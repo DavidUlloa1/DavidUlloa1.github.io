@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import Link from 'next/link'
+
 import styles from './styles/ArticleBlock.module.css';
 import classNames from 'classnames/bind';
 
@@ -12,6 +14,7 @@ function flipMode(mode: Mode) {
 const ArticleBlock = (props:{
         mode: Mode,
         color: DavidColor,
+        a: string,
 
         head: string,
         detail: string,
@@ -36,6 +39,7 @@ const ArticleBlock = (props:{
     } as React.CSSProperties
 
     return (
+        <Link href={props.a}>
         <div className={styles.container} style={style}>
             <div className={styles.colorBar} style={barStyle}></div>
             <div className={styles.textContainer}>
@@ -44,6 +48,7 @@ const ArticleBlock = (props:{
                 <p className={styles.p2} style={pStyle}>{props.metadata}</p>
             </div>
         </div>
+        </Link>
     );
 }
 

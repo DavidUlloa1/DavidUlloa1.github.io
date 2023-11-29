@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import Link from 'next/link'
+
 import styles from './styles/Header.module.css';
 import classNames from 'classnames/bind';
 
@@ -21,7 +23,7 @@ const Header = (props:{
     return (
         <div className={styles.container} style={style}>
             <div className={styles.headerText}>
-                <div>{props.text}</div>
+                <Link href={'/'}>{props.text}</Link>
                 <LightningButton mode={props.mode} setMode={props.setMode} />
             </div>
             <div className={styles.navContainer}>

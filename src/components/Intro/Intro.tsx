@@ -20,9 +20,11 @@ const Intro = (props:{
     return (
         <div className={styles.container}>
             <h1 className={styles.h1} style={hStyle}>Personal Website</h1>
-            <p className={styles.p} style={pStyle}>Welcome to demo of hugo's theme PaperMod.<br></br><strong>PaperMod</strong> is 
-            a simple but fast and responsive theme with useful feature-set that enhances UX.<br></br>Do give a 👍
-            on Github!<br></br> PaperMod is based on theme <strong>Paper</strong>.</p>
+            <p className={styles.p} style={pStyle}>
+                Hello. Welcome to David's personal website.<br></br>
+                There is nothing on here <strong>yet</strong> but hopefully I will use this in the future to house recruiter info and random things I do.<br></br>
+                Currently I just have set up the main structure of the site and the basic theme. Feel free to look around, I hear there might be some <em>secrets</em> hidden.<br></br>
+                Let me know if anything explodes. 👍</p>
         </div>
     );
 }

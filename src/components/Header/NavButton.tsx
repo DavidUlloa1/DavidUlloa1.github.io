@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+
+import Link from 'next/link'
 
 import styles from './styles/NavButton.module.css';
 import classNames from 'classnames/bind';
@@ -24,7 +26,11 @@ const NavButton = (props:{
     }
 
     return (
-        <div className={style} onMouseEnter={toggleHover(true)} onMouseLeave={toggleHover(false)}>{props.text}</div>
+        <Link href={props.a}>
+            <div className={style} onMouseEnter={toggleHover(true)} onMouseLeave={toggleHover(false)}>
+                {props.text}
+            </div>
+        </Link>
     );
 }
 

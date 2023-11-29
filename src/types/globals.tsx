@@ -1,5 +1,5 @@
-export function flipMode(mode: Mode) {
-    return mode == 'light' ? 'dark' : 'light';
-}
+'use client'
 
-(window as any).flipMode = flipMode;
+import React from 'react';
+
+export const ModeContext = React.createContext<Mode>('dark');
