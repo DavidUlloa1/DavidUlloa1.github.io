@@ -14,7 +14,7 @@ const Home = () => {
   const mode = useContext(ModeContext);
 
   const style = {
-    backgroundColor: mode == 'light' ? `var(--light-code-bg)` : `var(--dark-theme)`,
+    // backgroundColor: mode == 'light' ? `var(--light-code-bg)` : `var(--dark-theme)`,
     color: `var(--${mode}-primary)`
 } as React.CSSProperties;
 

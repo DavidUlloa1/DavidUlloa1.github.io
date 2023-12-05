@@ -34,9 +34,8 @@ const Layout2 = (props:{
         <div style={style}>
             <Header text="thedavid" mode={mode} setMode={setModeParam}>
                 <NavButton text='About Me' a='/aboutme' />
-                <NavButton text='Resume' a='/resume' />
+                <NavButton text='Blog' a='/blog' />
                 <NavButton text='Portfolio' a='/portfolio' />
-                <NavButton text='Articles' a='/articles' />
                 <NavButton text='Tutoring' a='/tutoring' />
             </Header>
             {props.children}

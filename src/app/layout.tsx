@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout(props: any) {
   const style = {
-    width: '100vw'
+    width: '100vw',
   } as React.CSSProperties;
 
   return (
