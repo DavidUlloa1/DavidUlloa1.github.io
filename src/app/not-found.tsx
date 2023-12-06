@@ -1,6 +1,7 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
+import { ModeContext } from '@/types/globals';
 
 const quotes:string[] = [
     "It's dangerous to go alone! Take this. 🗡️",
@@ -28,6 +29,8 @@ const Custom404 = () => {
     const [quote, setQuote] = useState<string>("");
     const [subQuote, setSubQuote] = useState<[string, string]>(["", ""]);
 
+    const mode = useContext(ModeContext);
+
     const style = {
         padding: '16px',
         paddingTop: '20vh',
@@ -35,7 +38,8 @@ const Custom404 = () => {
     } as React.CSSProperties;
 
     const pStyle = {
-        fontSize: '13px'
+        fontSize: '13px',
+        color: `var(--${mode}-secondary)`
     } as React.CSSProperties;
 
     useEffect(() => {
