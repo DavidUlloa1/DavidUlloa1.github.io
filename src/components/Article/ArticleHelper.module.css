@@ -1,0 +1,135 @@
+.container {
+    width: 100%;
+    max-width: 768px;
+    height: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 16px;
+    gap: 16px;
+    margin-bottom: 64px;
+}
+
+.mainSpacing {
+    padding: 16px;
+    gap: 16px;
+}
+
+.alignFront {
+    display: flex;
+    flex-direction: row nowrap;
+    align-items: flex-start;
+}
+
+.maxDiv {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+}
+
+.left {
+    justify-content: flex-start;
+}
+
+.multiDivWrapper {
+    height: auto;
+    width: 100%;
+    container-type: inline-size;
+}
+
+.multiDiv {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+@container (max-width: 400px) {
+    .multiDiv {
+        flex-direction: column;
+    }
+
+    .multiContainer {
+        width: 100%;
+    }
+}
+
+.multiContainer {
+    padding: 8px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 16px;
+}
+
+.title {
+    line-height: 1.3;
+    font-size: 1.8em;
+    margin-top: 16px;
+    border-left: 36px solid;
+    padding-left: 16px;
+    margin-left: -32px;
+}
+
+.subtitle1 {
+    line-height: 1.3;
+    font-size: 1.57em;
+    margin-top: 32px;
+    border-bottom: 2px solid;
+    width: auto;
+}
+
+.subtitle2 {
+    line-height: 1.3;
+    font-size: 1.33em;
+    margin-top: 8px;
+    margin-bottom: -8px;
+}
+
+.text {
+    font-size: 1.1em;
+    line-height: 1.65;
+    width: 100%;
+}
+
+.ul {
+    display: block;
+    list-style-type: disc;
+    /* margin-top: 1em;
+    margin-bottom: 1em; */
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 40px;
+    width: 100%;
+}
+
+.li {
+    line-height: 1.5em;
+}
+
+.img {
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+.quote {
+    padding: 16px;
+    border-radius: 16px;
+    font-size: 1.1em;
+    line-height: 1.65;
+}
+
+.gap {
+    width: 100%;
+}
+
+.emoji {
+    cursor: pointer;
+}

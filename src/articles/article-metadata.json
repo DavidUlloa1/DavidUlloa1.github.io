@@ -1,0 +1,28 @@
+[
+    {
+        "id": 1,
+        "headline": "About this website",
+        "blurb": "A bit of information on how this website runs under the hood and why it exists",
+        "publishDate": "14 Aug 2001",
+        "readTime": 2,
+        "tags": ["Misc", "Video Games", "Climate", "Math & Science", "MIT", "Movies", "Urban Design", "Education", "Japan & Anime", "Writing", "Coding"]
+    },
+    {
+        "id": 2,
+        "headline": "The essays that got me into MIT",
+        "blurb": "Reading and discussing probably the most important writings of my life and why they're actually kind of good",
+        "publishDate": "12 Dec 2023",
+        "readTime": 2,
+        "tags": ["Writing", "MIT"],
+        "active": false
+    },
+    {
+        "id": 3,
+        "headline": "How to beat your friends at Mario Kart 8: Deluxe",
+        "blurb": "A detailed set of tips and tricks on strategy and item usage from a kart-racing connoisseur",
+        "publishDate": "1 Jan 1975",
+        "readTime": 20,
+        "tags": ["Video Games"],
+        "active": false
+    }
+]

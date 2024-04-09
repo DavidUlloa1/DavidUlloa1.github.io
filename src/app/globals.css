@@ -101,6 +101,7 @@ body {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen,Ubuntu,Cantarell,open sans,helvetica neue,sans-serif;
 }
 
 a {
@@ -116,10 +117,15 @@ a {
 
 :root {
   --gold: #ffd32b;
-  --pink: #da71bb;
+  --pink: #fea2e3;
   --light-blue: #00ccff;
   --orange: #ffad2a;
-  --green: #00eb13;
+  --green: #81e189;
+  --purple: #cd9fe2;
+  --red: #ff8484;
+  --silver: #b7b7b7;
+  --blue: #8fa3ff;
+  --sand: #d9c48d;
   
   --white: #ffffff;
   --light-gray: #b0b0b0;
@@ -144,9 +150,13 @@ a {
   --light-tertiary: rgb(214, 214, 214);
   --light-content: rgb(31, 31, 31);
   --light-hljs-bg: rgb(28, 29, 33);
-  --light-code-bg: rgb(231, 231, 231);
+  --light-code-bg: rgb(245, 245, 245);
   --light-border: rgb(238, 238, 238);
 
   --header-height: 60px;
   --footer-height: 30px;
+}
+
+.emoji {
+  cursor: pointer;
 }

@@ -18,7 +18,7 @@ export default function RootLayout(props: any) {
 
   return (
     <html lang="en">
-      <body className={inter.className} style={style}>
+      <body style={style}>
         <Layout2>
           {props.children}
         </Layout2>

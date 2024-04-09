@@ -34,12 +34,12 @@ const Layout2 = (props:{
         <div style={style}>
             <Header text="thedavid" mode={mode} setMode={setModeParam}>
                 <NavButton text='About Me' a='/aboutme' />
-                <NavButton text='Blog' a='/blog' />
+                <NavButton text='Blog' a='/articles' />
                 <NavButton text='Portfolio' a='/portfolio' />
                 <NavButton text='Tutoring' a='/tutoring' />
             </Header>
             {props.children}
-            <Footer text="David Ulloa · 2023" mode={mode} />
+            <Footer text="David Ulloa | 2024" mode={mode} />
         </div>
         </ModeContext.Provider>
     )

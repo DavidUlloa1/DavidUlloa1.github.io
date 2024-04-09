@@ -1,0 +1,15 @@
+.container {
+    width: 100%;
+    max-width: 768px;
+    height: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 16px;
+    gap: 16px;
+    margin-bottom: 64px;
+}
+
+.emoji {
+    cursor: pointer;
+    font-style: normal;  
+}

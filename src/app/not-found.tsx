@@ -11,7 +11,9 @@ const quotes:string[] = [
     "No, it's necessary.",
     "You must construct additional pylons",
     "Hi! I like shorts! They're comfy and easy to wear!",
-    "Justice rains from above!"
+    "Justice rains from above!",
+    "Excellent cornering!",
+    "Welcome to Costco. I love you."
 ]
 
 const subQuotes:[string, string][] = [
@@ -22,7 +24,9 @@ const subQuotes:[string, string][] = [
     ['Interstellar', ' | 2014'],
     ["StarCraft", " | Blizzard 1998"],
     ["Pokemon Red and Green", " | Game Freak 1996"],
-    ["Overwatch", " | Blizzard 2016"]
+    ["Overwatch", " | Blizzard 2016"],
+    ["Ridge Racer DS", " | 2004"],
+    ["Idiocracy", " | 2006"]
 ]
 
 const Custom404 = () => {
