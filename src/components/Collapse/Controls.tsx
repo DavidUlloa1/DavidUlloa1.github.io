@@ -1,13 +1,13 @@
 import React, { useContext, useState, useEffect } from 'react';
 
 import { flipMode, emojiWave } from '@/types/globals';
-import { pausedIcon, mutedIcon, IntervalTimer } from './CollapseData';
+import { pausedIcon, mutedIcon } from './CollapseData';
 
 import styles from './styles/Controls.module.css';
 import classNames from 'classnames/bind';
 
 import { ModeContext } from '@/types/globals';
-import { Grid } from './Collapse';
+import { Grid } from './CollapseData';
 
 let cx = classNames.bind(styles);
 
