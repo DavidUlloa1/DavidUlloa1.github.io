@@ -1,13 +1,13 @@
 import React, { useContext, useState, useEffect } from 'react';
 
 import { flipMode, emojiWave } from '@/types/globals';
-import { parseBlockColor, parseBlockType, BlockType, IntervalTimer } from './CollapseData';
+import { parseBlockColor, parseBlockType, BlockType } from './CollapseData';
 
 import styles from './styles/Queue.module.css';
 import classNames from 'classnames/bind';
 
 import { ModeContext } from '@/types/globals';
-import { Grid } from './Collapse';
+import { Grid } from './CollapseData';
 
 let cx = classNames.bind(styles);
 
