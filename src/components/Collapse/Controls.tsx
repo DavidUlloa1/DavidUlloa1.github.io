@@ -49,14 +49,14 @@ const Controls = (props:{
             props.game.playSound(props.game.classic, true);
         }
         else {
-            props.game.classic.pause();
+            props.game.classic.current!.pause();
         }
     }
 
     function pausedToggle() {
         props.game.paused = !props.game.paused;
         if (props.game.paused) {
-            props.game.classic.pause();
+            props.game.classic.current!.pause();
         }
         props.game.didUpdate();
         setPaused(props.game.paused);

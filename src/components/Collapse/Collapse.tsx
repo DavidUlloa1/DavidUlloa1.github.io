@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useRef } from 'react';
+// import useSound from 'use-sound'
 
 import { emojiWave } from '@/types/globals';
 import { BlockType, Color, Block, Blocks } from './CollapseData';
@@ -46,19 +47,19 @@ export class Grid {
     public blocksTotal: number;
 
     public muted: boolean;
-    public classic = new Audio(classic);
-    private block_fall = new Audio(block_fall);
-    private hit_good = new Audio(hit_good);
-    private hit_bad = new Audio(hit_bad);
-    private blocks_near_top = new Audio(blocks_near_top);
-    private trophy_earned = new Audio(trophy_earned);
-    public next_block = new Audio(next_block);
-    public next_line = new Audio(next_line);
-    private bomb_explode = new Audio(bomb_explode);
-    private row_bomb = new Audio(row_bomb);
-    private coin_earned = new Audio(coin_earned);
-    private switcher = new Audio(switcher);
-    private you_lose = new Audio(you_lose);
+    public classic: any;
+    public block_fall: any;
+    public hit_good: any;
+    public hit_bad: any;
+    public blocks_near_top: any;
+    public trophy_earned: any;
+    public next_block: any;
+    public next_line: any;
+    public bomb_explode: any;
+    public row_bomb: any;
+    public coin_earned: any;
+    public switcher: any;
+    public you_lose: any;
 
     public paused: boolean;
     public active: boolean;
@@ -81,7 +82,6 @@ export class Grid {
         this.blocksTotal = 0;
 
         this.muted = true;
-        this.classic.loop = true;
         this.paused = false;
         this.active = true;
         this.stunned = false;
@@ -344,13 +344,17 @@ export class Grid {
         }
     }
 
-    public playSound(sound: HTMLAudioElement, bg: boolean = false) {
+    public playSound(sound: React.MutableRefObject<HTMLAudioElement | undefined>, bg: boolean = false) {
+        if (game.classic) {
+            game.classic.loop = true;
+        }
+
         if (!this.muted) {
-            if (sound.paused || bg) {
-                sound.play();
+            if (sound.current!.paused || bg) {
+                sound.current!.play();
             }
             else {
-                sound.currentTime = 0;
+                sound.current!.currentTime = 0;
             }
         }
     }
@@ -371,8 +375,8 @@ export class Grid {
         this.gameOver = true;
 
         this.playSound(this.you_lose);
-        this.classic.pause();
-        this.classic.currentTime = 0;
+        this.classic.current!.pause();
+        this.classic.current!.currentTime = 0;
         this.didUpdate();
     }
 
@@ -443,6 +447,21 @@ const Collapse = (props:{
     const [state, setState] = useState<number>(0);
     const [showStartButton, setShowStartButton] = useState<boolean>(false);
     const mode = useContext(ModeContext);
+    
+    // [game.classic] = useSound(classic);
+    game.classic = useRef<HTMLAudioElement | undefined>(typeof Audio !== "undefined" ? new Audio(classic) : undefined);
+    game.block_fall = useRef<HTMLAudioElement | undefined>(typeof Audio !== "undefined" ? new Audio(block_fall) : undefined);
+    game.hit_good = useRef<HTMLAudioElement | undefined>(typeof Audio !== "undefined" ? new Audio(hit_good) : undefined);
+    game.hit_bad = useRef<HTMLAudioElement | undefined>(typeof Audio !== "undefined" ? new Audio(hit_bad) : undefined);
+    game.blocks_near_top = useRef<HTMLAudioElement | undefined>(typeof Audio !== "undefined" ? new Audio(blocks_near_top) : undefined);
+    game.trophy_earned = useRef<HTMLAudioElement | undefined>(typeof Audio !== "undefined" ? new Audio(trophy_earned) : undefined);
+    game.next_block = useRef<HTMLAudioElement | undefined>(typeof Audio !== "undefined" ? new Audio(next_block) : undefined);
+    game.next_line = useRef<HTMLAudioElement | undefined>(typeof Audio !== "undefined" ? new Audio(next_line) : undefined);
+    game.bomb_explode = useRef<HTMLAudioElement | undefined>(typeof Audio !== "undefined" ? new Audio(bomb_explode) : undefined);
+    game.row_bomb = useRef<HTMLAudioElement | undefined>(typeof Audio !== "undefined" ? new Audio(row_bomb) : undefined);
+    game.coin_earned = useRef<HTMLAudioElement | undefined>(typeof Audio !== "undefined" ? new Audio(coin_earned) : undefined);
+    game.switcher = useRef<HTMLAudioElement | undefined>(typeof Audio !== "undefined" ? new Audio(switcher) : undefined);
+    game.you_lose = useRef<HTMLAudioElement | undefined>(typeof Audio !== "undefined" ? new Audio(you_lose) : undefined);
 
     useEffect(() => {
         setIsMounted(true);
@@ -516,7 +535,7 @@ const Collapse = (props:{
             <div className={styles.outerContainer}>
                 {screen()}
                 <div className={styles.container} style={pointerEvent}>
-                    <audio></audio>
+                    <audio preload="auto"></audio>
                     <div className={styles.top}></div>
                     <div className={styles.innerContainer}>
                         {game.active ? game.visualize() : null}
