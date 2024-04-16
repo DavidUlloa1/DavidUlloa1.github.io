@@ -4,6 +4,7 @@ import React, { useContext } from 'react';
 import styles from './page.module.css'
 
 import Intro from '@/components/Intro/Intro'
+import Collapse from '@/components/Collapse/Collapse';
 import ArticleList from '@/components/ArticleList/ArticleList';
 
 import { ModeContext } from '@/types/globals';
@@ -18,7 +19,8 @@ const Home = () => {
 
   return (
     <div className={styles.container} style={style}>
-      <Intro mode={mode} />
+      {/* <Intro mode={mode} /> */}
+      <Collapse />
     </div>
   )
 }

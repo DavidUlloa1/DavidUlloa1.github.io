@@ -22,7 +22,8 @@ const Layout2 = (props:{
         color: `var(--${mode}-primary)`,
         display: 'flex',
         flexFlow: 'column nowrap',
-        alignItems: 'center'
+        alignItems: 'center',
+        justifyContent: 'space-between'
     } as React.CSSProperties;
 
     function setModeParam(mode: Mode) {

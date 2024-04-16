@@ -1,0 +1,82 @@
+.outerContainer {
+    height: 100%;
+    width: 100%;
+    max-width: 768px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    pointer-events: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 550px;
+    aspect-ratio: 4 / 5;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    pointer-events: all;
+}
+
+.innerContainer {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.column {
+    height: 100%;
+    /* padding: 8px; */
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.top {
+    outline: 1px solid gray;
+}
+
+.screen {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    /* width: calc(100% - 16px); */
+    /* margin-left: -8px;
+    margin-top: -8px; */
+    /* aspect-ratio: 34 / 50; */
+    max-width: 534px;
+    width: 50%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--dark-primary);
+    pointer-events: all;
+    margin-bottom: 4.16%;
+}
+
+.p {
+    margin-top: 12px;
+}
+
+.flavor {
+    text-align: center;
+    padding-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.startButton {
+    width: 100px;
+    height: 50px;
+    border-radius: 8px;
+    background-color: red;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}

@@ -10,6 +10,8 @@ import ArticleList from '@/components/ArticleList/ArticleList';
 import { ModeContext } from '@/types/globals';
 import { parseTagColor, flipMode, emptyArticleData, emojiWave } from '@/types/globals';
 
+import collapse from '@/../public/portfolio/collapse.png'
+
 import lightmotif from '@/../public/portfolio/Lightmotif poster.png'
 import lightmotif_gif from '@/../public/portfolio/Lightmotif.gif'
 
@@ -26,6 +28,13 @@ const Home = () => {
         <div className={styles.container}>
             <Title metadata={data} first={true}>Portfolio</Title>
             <Subtitle1 metadata={data}>Games & Apps</Subtitle1>
+            <Subtitle2>Collapse!</Subtitle2>
+            <Multi>
+                <Text mode={mode}>Did you find the secret hidden on the landing page <span className={styles.emoji} onMouseDown={() => emojiWave('👀')}>👀</span>? 
+                    It's a game I made to spice up the website. It's basically a carbon copy of the game Super Collapse 3 which I played a lot as a kid. Try to get the high score!
+                </Text>
+                <Img img={collapse} />
+            </Multi>
             <Subtitle2>Lightmotif</Subtitle2>
             <Img img={lightmotif} />
             <Text mode={mode}>
