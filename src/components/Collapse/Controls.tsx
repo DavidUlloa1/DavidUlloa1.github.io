@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
 
-import { flipMode, emojiWave } from '@/types/globals';
 import { pausedIcon, mutedIcon } from './CollapseData';
 
 import styles from './styles/Controls.module.css';
@@ -46,17 +45,17 @@ const Controls = (props:{
         setMuted(!muted);
         props.game.muted = muted;
         if (!props.game.muted) {
-            props.game.playSound(props.game.classic, true);
+            props.game.playSound(props.game.classic);
         }
         else {
-            props.game.classic.current!.pause();
+            props.game.classic[1].pause();
         }
     }
 
     function pausedToggle() {
         props.game.paused = !props.game.paused;
         if (props.game.paused) {
-            props.game.classic.current!.pause();
+            props.game.classic[1].pause();
         }
         props.game.didUpdate();
         setPaused(props.game.paused);

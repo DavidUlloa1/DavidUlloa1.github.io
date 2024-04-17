@@ -488,18 +488,9 @@ export class Grid {
         }
     }
 
-    public playSound(sound: React.MutableRefObject<HTMLAudioElement | undefined>, bg: boolean = false) {
-        if (this.classic) {
-            this.classic.loop = true;
-        }
-
-        if (!this.muted) {
-            if (sound.current!.paused || bg) {
-                sound.current!.play();
-            }
-            else {
-                sound.current!.currentTime = 0;
-            }
+    public playSound(sound: any) {
+        if (!this.muted && sound != undefined) {
+            sound[0]();
         }
     }
 
@@ -519,8 +510,8 @@ export class Grid {
         this.gameOver = true;
 
         this.playSound(this.you_lose);
-        this.classic.current!.pause();
-        this.classic.current!.currentTime = 0;
+        this.classic[1].stop();
+        // this.classic.current!.currentTime = 0;
         this.didUpdate();
     }
 

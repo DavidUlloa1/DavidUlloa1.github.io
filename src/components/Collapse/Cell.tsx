@@ -1,7 +1,7 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 
-import { flipMode, emojiWave } from '@/types/globals';
-import { parseBlockColor, BlockType, Block, Color, parseBlockType } from './CollapseData';
+import { flipMode } from '@/types/globals';
+import { parseBlockColor, Block, parseBlockType } from './CollapseData';
 
 import styles from './styles/Cell.module.css';
 import classNames from 'classnames/bind';

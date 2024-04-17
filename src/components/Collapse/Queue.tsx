@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 
-import { flipMode, emojiWave } from '@/types/globals';
-import { parseBlockColor, parseBlockType, BlockType } from './CollapseData';
+import { flipMode } from '@/types/globals';
+import { parseBlockColor, parseBlockType } from './CollapseData';
 
 import styles from './styles/Queue.module.css';
 import classNames from 'classnames/bind';

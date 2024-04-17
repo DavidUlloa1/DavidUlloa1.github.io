@@ -1,8 +1,6 @@
-import React, { useState, useEffect, useContext, useRef } from 'react';
-// import useSound from 'use-sound'
+import React, { useState, useEffect, useContext } from 'react';
+import useSound from 'use-sound'
 
-import { emojiWave } from '@/types/globals';
-import { BlockType, Color, Block, Blocks } from './CollapseData';
 import { ModeContext } from '@/types/globals';
 
 import styles from './styles/Collapse.module.css';
@@ -11,9 +9,6 @@ import classNames from 'classnames/bind';
 import { Grid } from './CollapseData';
 import Queue from './Queue';
 import Controls from './Controls';
-
-import { Matrix, sec, sqrt } from 'mathjs';
-const math = require('mathjs');
 
 import classic from '@/../public/collapse/classic.mp3';
 import block_fall from '@/../public/collapse/block_fall.ogg';
@@ -45,20 +40,23 @@ const Collapse = (props:{
     const [gameOverStall, setGameOverStall] = useState<boolean>(false);
     const mode = useContext(ModeContext);
     
-    // [game.classic] = useSound(classic);
-    game.classic = useRef<HTMLAudioElement | undefined>(typeof Audio !== "undefined" ? new Audio(classic) : undefined);
-    game.block_fall = useRef<HTMLAudioElement | undefined>(typeof Audio !== "undefined" ? new Audio(block_fall) : undefined);
-    game.hit_good = useRef<HTMLAudioElement | undefined>(typeof Audio !== "undefined" ? new Audio(hit_good) : undefined);
-    game.hit_bad = useRef<HTMLAudioElement | undefined>(typeof Audio !== "undefined" ? new Audio(hit_bad) : undefined);
-    game.blocks_near_top = useRef<HTMLAudioElement | undefined>(typeof Audio !== "undefined" ? new Audio(blocks_near_top) : undefined);
-    game.trophy_earned = useRef<HTMLAudioElement | undefined>(typeof Audio !== "undefined" ? new Audio(trophy_earned) : undefined);
-    game.next_block = useRef<HTMLAudioElement | undefined>(typeof Audio !== "undefined" ? new Audio(next_block) : undefined);
-    game.next_line = useRef<HTMLAudioElement | undefined>(typeof Audio !== "undefined" ? new Audio(next_line) : undefined);
-    game.bomb_explode = useRef<HTMLAudioElement | undefined>(typeof Audio !== "undefined" ? new Audio(bomb_explode) : undefined);
-    game.row_bomb = useRef<HTMLAudioElement | undefined>(typeof Audio !== "undefined" ? new Audio(row_bomb) : undefined);
-    game.coin_earned = useRef<HTMLAudioElement | undefined>(typeof Audio !== "undefined" ? new Audio(coin_earned) : undefined);
-    game.switcher = useRef<HTMLAudioElement | undefined>(typeof Audio !== "undefined" ? new Audio(switcher) : undefined);
-    game.you_lose = useRef<HTMLAudioElement | undefined>(typeof Audio !== "undefined" ? new Audio(you_lose) : undefined);
+    game.classic = useSound(classic, {
+        onend: () => {
+            game.classic[0]();
+        }
+    });
+    game.block_fall = useSound(block_fall);
+    game.hit_good = useSound(hit_good);
+    game.hit_bad = useSound(hit_bad);
+    game.blocks_near_top = useSound(blocks_near_top);
+    game.trophy_earned = useSound(trophy_earned);
+    game.next_block = useSound(next_block);
+    game.next_line = useSound(next_line);
+    game.bomb_explode = useSound(bomb_explode);
+    game.row_bomb = useSound(row_bomb);
+    game.coin_earned = useSound(coin_earned);
+    game.switcher = useSound(switcher);
+    game.you_lose = useSound(you_lose);
 
     useEffect(() => {
         setIsMounted(true);
@@ -76,7 +74,7 @@ const Collapse = (props:{
     function unpause() {
         if (game.paused) {
             game.paused = false;
-            game.playSound(game.classic, true);
+            game.playSound(game.classic);
             game.didUpdate();
         }
     }
@@ -85,11 +83,6 @@ const Collapse = (props:{
         if (gameOverStall) {
             setGameOverStall(false);
             game.reset();
-        }
-        else {
-            setTimeout(() => {
-                setGameOverStall(true);
-            }, 5000);
         }
     }
 
@@ -103,6 +96,9 @@ const Collapse = (props:{
             )
         }
         else if (game.gameOver) {
+            setTimeout(() => {
+                setGameOverStall(true);
+            }, 5000);
             return (
                 <div className={styles.screen} onClick={reset}>
                     <h1>Game Over!</h1>
